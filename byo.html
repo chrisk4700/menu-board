@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>BYO Pizza</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <style>
+    :root {
+      --bg:#111;
+      --header-h:64px;
+      --gutter:20px;
+    }
+    *{box-sizing:border-box;}
+    html, body {
+      margin:0;
+      padding:0;
+      height:100%;
+      background: var(--bg);
+      font-family: Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .back {
+      position: fixed;
+      top: calc(env(safe-area-inset-top,0px) + 16px);
+      left: 16px;
+      z-index: 999;
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      background: rgba(0,0,0,0.55);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 600;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+    }
+    .back:hover{ background: rgba(255,255,255,0.06); }
+
+    .wrapper {
+      width: 100vw;
+      min-height: 100vh;
+      padding: calc(var(--header-h) + var(--gutter)) var(--gutter) calc(var(--gutter) + env(safe-area-inset-bottom,0px));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .wrapper img {
+      display: block;
+      width: auto;
+      max-width: 94vw;
+      max-height: calc(100vh - (var(--header-h) + 2 * var(--gutter)));
+      object-fit: contain;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+    }
+
+    @media(max-width:480px){
+      .wrapper img{ max-width: 96vw; }
+      .back{ font-size:14px; padding:8px 10px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="pizzas.html" class="back">← Back</a>
+  <div class="wrapper">
+    <img src="byo5.jpg" alt="BYO Step 5">
+    <img src="byo6.jpg" alt="BYO Step 6">
+    <img src="byo7.jpg" alt="BYO Step 7">
+    <img src="byo4.jpg" alt="BYO Step 4">
+    <img src="byo2.jpg" alt="BYO Step 2">
+    <img src="byo3.jpg" alt="BYO Step 3">
+    <img src="byo1.jpg" alt="BYO Step 1">
+  </div>
+</body>
+</html>

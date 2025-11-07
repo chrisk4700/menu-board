@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Pizzas Menu</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 40vw;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .menu-box {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3vw;
+      color: white;
+      text-decoration: none;
+      border-radius: 20px;
+      font-weight: bold;
+      background: linear-gradient(45deg, #ff6a00, #ffcc00);
+    }
+
+    .menu-box:hover {
+      filter: brightness(1.15);
+    }
+
+    .back {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 2vw;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      background: #333;
+    }
+
+    .back:hover {
+      background: #555;
+    }
+  </style>
+</head>
+<body>
+  <a href="pizza.html" class="back">← Back</a>
+
+  <div class="container">
+    <a href="BYO.html" class="menu-box">BYO</a>
+    <a href="Specialty.html" class="menu-box">Specialty</a>
+  </div>
+</body>
+</html>

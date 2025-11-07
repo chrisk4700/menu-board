@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sandwiches</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #111;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .scroll-container {
+      display: flex;
+      flex-direction: column;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+      height: 100vh;
+    }
+
+    .full-image {
+      flex: 0 0 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      scroll-snap-align: start;
+    }
+
+    .side-by-side-container {
+      flex: 0 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      scroll-snap-align: start;
+      padding: 10px;
+      height: 50vh;
+    }
+
+    .side-by-side-container img {
+      width: calc(50% - 10px);
+      height: 100%;
+      object-fit: contain;
+      border-radius: 15px;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 15px;
+    }
+
+    .back {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 1.8rem;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      background: #333;
+      z-index: 10;
+    }
+
+    .back:hover { background: #555; }
+  </style>
+</head>
+<body>
+  <a href="menu.html" class="back">← Back</a>
+  <div class="scroll-container">
+    <div class="full-image"><img src="sw6.jpg" alt="Sandwich Special"></div>
+    <div class="side-by-side-container">
+      <img src="sw.jpg" alt="Sandwich 1">
+      <img src="sw1.jpg" alt="Sandwich 2">
+    </div>
+    <div class="side-by-side-container">
+      <img src="sw2.jpg" alt="Sandwich 3">
+      <img src="sw3.jpg" alt="Sandwich 4">
+    </div>
+    <div class="side-by-side-container">
+      <img src="sw4.jpg" alt="Sandwich 5">
+      <img src="sw5.jpg" alt="Sandwich 6">
+    </div>
+  </div>
+</body>
+</html>
