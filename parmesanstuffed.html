@@ -1,80 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <title>Parmesan Stuffed Crust Prep</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <style>
-    :root{
-      --bg:#111;
-      --header-h:64px; /* header/back height (adjust if you change the back button) */
-      --gutter:20px;
-    }
-    *{box-sizing:border-box}
-    html,body{
-      height:100%;
-      margin:0;
-      padding:0;
-      background:var(--bg);
-      font-family:Arial, sans-serif;
-      -webkit-font-smoothing:antialiased;
-      -webkit-text-size-adjust:100%;
+    body {
+      margin: 0;
+      padding: 0;
+      background: #111;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
-    /* fixed back button */
-    .back{
-      position: fixed;
-      top: calc(env(safe-area-inset-top, 0px) + 16px);
-      left: 16px;
-      z-index: 999;
-      display:inline-block;
-      color:#fff;
-      text-decoration:none;
-      background:rgba(0,0,0,0.55);
-      padding:10px 14px;
-      border-radius:10px;
-      font-weight:600;
-      box-shadow:0 6px 18px rgba(0,0,0,0.5);
-      backdrop-filter: blur(4px);
-    }
-    .back:hover{ background:rgba(255,255,255,0.06); }
-
-    /* page wrapper — add top padding so content never sits under the fixed header */
-    .wrapper{
-      width:100%;
-      min-height:100vh;
-      padding: calc(var(--gutter) + var(--header-h)) var(--gutter) calc(var(--gutter) + env(safe-area-inset-bottom, 0px));
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:20px;
+    .scroll-container {
+      display: flex;
+      flex-direction: column;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+      height: 100vh;
     }
 
-    /* images: ensure they fit the visible viewport, never get cropped */
-    .wrapper img{
-      display:block;
-      width: auto;
-      max-width: 94vw;
-      max-height: calc(100vh - (var(--header-h) + 2 * var(--gutter)));
+    .full-image {
+      flex: 0 0 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      scroll-snap-align: start;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
       object-fit: contain;
-      border-radius: 14px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+      border-radius: 15px;
     }
 
-    /* on very small screens reduce max width */
-    @media (max-width:480px){
-      .wrapper img{ max-width: 96vw; }
-      .back{ font-size:14px; padding:8px 10px; }
+    .back {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 1.8rem;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      background: #333;
+      z-index: 10;
     }
+
+    .back:hover { background: #555; }
   </style>
 </head>
 <body>
   <a href="dough.html" class="back">← Back</a>
-
-  <div class="wrapper">
-    <!-- make sure these filenames match exactly (case-sensitive on some servers) -->
-    <img src="images/pscprep.jpg" alt="Parmesan Stuffed Crust Step 1">
-    <img src="images/pscprep1.jpg" alt="Parmesan Stuffed Crust Step 2">
+  <div class="scroll-container">
+    <div class="full-image"><img src="images/pscprep.jpg" alt="Parmesan Stuffed Step 1"></div>
+    <div class="full-image"><img src="images/pscprep1.jpg" alt="Parmesan Stuffed Step 2"></div>
   </div>
 </body>
 </html>
