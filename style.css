@@ -102,7 +102,7 @@ html, body {
   position: fixed;
   bottom: 60px;   /* moved UP from 20px */
   right: 70px;    /* moved LEFT from 20px */
-  width: 200px;    /* was 65px → now ~20% larger */
+  width: 100px;    /* was 65px → now ~20% larger */
   height: auto;
   opacity: 0.95;
   pointer-events: none;
